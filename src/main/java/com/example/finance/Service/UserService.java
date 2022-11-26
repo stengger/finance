@@ -41,8 +41,31 @@ public class UserService {
         return success;
     }
 
+    /**
+     * 查询用户名是否存在
+     * @param username
+     * @return
+     */
     public JsonUtils verifyUsername(String username) {
-        JsonUtils jsonUtils = new JsonUtils();
-        return jsonUtils;
+        QueryWrapper<User> wrapper = new QueryWrapper<>();
+        wrapper.eq("username", username);
+        User user=userMapper.selectOne(wrapper);
+        if (user == null) {
+            return JsonUtils.fail();
+        }
+        return JsonUtils.success();
+    }
+
+    /**
+     * 用户注册
+     *
+     * @param username
+     * @param password
+     * @return
+     */
+    public JsonUtils register(String username, String password) {
+
+//        userMapper.insert();
+        return JsonUtils.success();
     }
 }
