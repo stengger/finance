@@ -5,6 +5,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class PageController {
+
+    @RequestMapping("index.html")
+    public String indexPage() {
+        return "login";
+    }
+
     @RequestMapping("login.html")
     public String loginPage() {
         return "login";
