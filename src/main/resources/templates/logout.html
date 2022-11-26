@@ -1,0 +1,12 @@
+<!DOCTYPE HTML>
+<!-- 注意Thymeleaf模板引擎要引入xmlns:th="http://www.thymeleaf.org"命名空间 否则会有校验错误 但不影响代码执行-->
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>see you</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<!-- ${name}用于获得Controller返回的Request的取值范围的值，${}一定要在th:开头的标签里才有效 -->
+<p th:object="${#response.sendRedirect('/login.html')}"></p>
+</body>
+</html>

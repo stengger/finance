@@ -3,9 +3,10 @@ package com.example.finance.Controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpServletRequest;
+
 @Controller
 public class PageController {
-
     @RequestMapping("index.html")
     public String indexPage() {
         return "login";
@@ -29,5 +30,11 @@ public class PageController {
     @RequestMapping("toregister.html")
     public String toregister() {
         return "register";
+    }
+
+    @RequestMapping("logout.html")
+    public String logout(HttpServletRequest request){
+        request.getSession().invalidate();
+        return "logout";
     }
 }
