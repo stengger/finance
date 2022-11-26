@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!-- 注意Thymeleaf模板引擎要引入xmlns:th="http://www.thymeleaf.org"命名空间 否则会有校验错误 但不影响代码执行-->
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>我们要在这里使用 thymeleaf模板里面的循环指令解析数据 以表格的形式来展示users里面的数据</h2>
+<!--<h3 th:text="${users}"></h3>-->
+<table border="1">
+    <tr>
+        <th>编号</th>
+        <th>账号</th>
+        <th>真实姓名</th>
+        <th>电话号码</th>
+        <th>邮箱</th>
+    </tr>
+
+    <!--类似与 for(User use:users)-->
+    <tr th:each="user:${users}">
+        <td th:text="${user.id}"></td>
+        <td th:text="${user.username}"></td>
+        <td th:text="${user.realname}"></td>
+        <td th:text="${user.phone}"></td>
+        <td th:text="${user.email}"></td>
+    </tr>
+
+
+
+</table>
+</body>
+</html>
