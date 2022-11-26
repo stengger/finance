@@ -25,4 +25,9 @@ public class PageController {
     public String userMain() {
         return "/user/main";
     }
+
+    @RequestMapping("toregister.html")
+    public String toregister() {
+        return "register";
+    }
 }

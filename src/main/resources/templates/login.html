@@ -71,7 +71,7 @@
                 </div>
             </form>
             <div style="margin-left: 100px">
-                <a href="http://localhost/toregister.html">还没有账号？去注册</a>
+                <a href="http://localhost:8080/toregister.html">还没有账号？去注册</a>
             </div>
 
         </div>
@@ -162,7 +162,7 @@
         //注释掉使用MD5加密的代码
         // var pwd = $("#password").val();
         //     $("#password").val($.md5(pwd));
-            console.log($("#password").val())
+        //     console.log($("#password").val())
             $.ajax({
                 url: "/login/verifyLogin",
                 type: "GET",
