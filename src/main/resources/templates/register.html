@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <!-- saved from url=(0032)http://localhost/toregister.html -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>个人理财系统注册界面</title>
     <!-- 引入bootstrap样式 -->
@@ -15,12 +17,14 @@
         .lear-wrapper {
             position: relative;
         }
+
         .lear-login {
             display: flex !important;
             min-height: 100vh;
             align-items: center !important;
             justify-content: center !important;
         }
+
         .login-center1 {
             background: #fff;
             min-width: 38.25rem;
@@ -28,13 +32,16 @@
             border-radius: 5px;
             margin: 2.85714em 0;
         }
+
         .login-header {
             margin-bottom: 1.5rem !important;
         }
+
         .login-center .has-feedback.feedback-left .form-control {
             padding-left: 38px;
             padding-right: 12px;
         }
+
         .login-center .has-feedback.feedback-left .form-control-feedback {
             left: 0;
             right: auto;
@@ -44,6 +51,7 @@
             z-index: 4;
             color: #dcdcdc;
         }
+
         .login-center .has-feedback.feedback-left.row .form-control-feedback {
             left: 15px;
         }
@@ -58,15 +66,18 @@
             </div>
             <form>
                 <div class="form-group has-feedback feedback-left">
-                    <input type="text" placeholder="请输入您的用户名" class="form-control" name="username" id="username"><span class="help-block"></span>
+                    <input type="text" placeholder="请输入您的用户名" class="form-control" name="username" id="username"><span
+                        class="help-block"></span>
                     <span class="mdi mdi-account form-control-feedback" aria-hidden="true"></span>
                 </div>
                 <div class="form-group has-feedback feedback-left">
-                    <input type="password" placeholder="请输入密码" class="form-control" id="password" name="password"><span class="help-block"></span>
+                    <input type="password" placeholder="请输入密码" class="form-control" id="password" name="password"><span
+                        class="help-block"></span>
                     <span class="mdi mdi-lock form-control-feedback" aria-hidden="true"></span>
                 </div>
                 <div class="form-group has-feedback feedback-left">
-                    <input type="password" placeholder="请重复密码" class="form-control" id="repassword" name="repassword"><span class="help-block"></span>
+                    <input type="password" placeholder="请重复密码" class="form-control" id="repassword"
+                           name="repassword"><span class="help-block"></span>
                     <span class="mdi mdi-lock form-control-feedback" aria-hidden="true"></span>
                 </div>
                 <div class="form-group">
@@ -75,7 +86,7 @@
                 </div>
             </form>
             <div style="margin-left: 110px">
-                <a href="http://localhost/tologin.html">已有账号？去登录</a>
+                <a href="http://localhost:8080/login.html">已有账号？去登录</a>
             </div>
 
         </div>
@@ -87,7 +98,9 @@
 <script src="/bootstrap/js/bootstrap.js"></script>
 <script src="/js/md5.js"></script>
 <!-- 点线粒子插件 -->
-<script color="255,0,255" opacity="0.8" zindex="9999" count="99" src="/js/canvas-nest.js"></script><canvas width="1522" height="346" style="display: block; position: absolute; top: 0px; left: 0px; height: 100%; width: 100%; overflow: hidden; pointer-events: none; z-index: 9999; opacity: 0.8;"></canvas>
+<script color="255,0,255" opacity="0.8" zindex="9999" count="99" src="/js/canvas-nest.js"></script>
+<canvas width="1522" height="346"
+        style="display: block; position: absolute; top: 0px; left: 0px; height: 100%; width: 100%; overflow: hidden; pointer-events: none; z-index: 9999; opacity: 0.8;"></canvas>
 <script>
     var show_num = [];
     $(function () {
@@ -108,6 +121,7 @@
         });
 
     });
+
     function verifyUsername() {
         //发送ajax请求校验用户名是否可用
         var username = document.getElementById("username").value;
@@ -118,12 +132,12 @@
             return false;
         } else {
             $.ajax({
-                url: "/login/loginVerifyUsername/"+username,
+                url: "/login/loginVerifyUsername/" + username,
                 type: "GET",
                 success: function (result) {
                     if (result.code === 100) {
                         show_validate_msg("#username", "error",
-                            "用户"+username+"已存在");
+                            "用户" + username + "已存在");
                         $("#login_btn")
                             .attr("disabled", "disabled");
                         lock = false;
@@ -146,17 +160,17 @@
             show_validate_msg("#repassword", "error", "重复密码为空");
             $("#login_btn").attr("disabled", "disabled");
             return false;
-        } else if (password===""){
+        } else if (password === "") {
             show_validate_msg("#repassword", "error", "上一项密码为空");
             $("#login_btn").attr("disabled", "disabled");
             return false;
-        }else{
-            if (repassword===password){
+        } else {
+            if (repassword === password) {
                 show_validate_msg("#repassword", "success",
                     "重复密码相同");
                 $("#login_btn").removeAttr("disabled");
                 return true;
-            }else{
+            } else {
                 show_validate_msg("#repassword", "error", "两次密码不相同");
                 $("#login_btn").attr("disabled", "disabled");
                 return false;
@@ -195,31 +209,33 @@
             $("#login_btn").attr("disabled", "disabled");
             return false;
         }
-            var pwd = $("#password").val();
-            var newpwd = $.md5(pwd);
-            $("#password").val(newpwd);
-            $("#repassword").val(newpwd)
-            $.ajax({
-                url: "/login/register",
-                type: "POST",
-                data: {
-                    "username": $("#username").val(),
-                    "password": $("#password").val()
-                },
-                success: function (result) {
-                    if (result.code === 100) {
-                        var url = result.extend.url;
-                        //alert(url);
-                        location.href = url;
-                    } else {
-                        show_validate_msg("#password", "error",
-                            "密码错误");
-                        $("#login_btn")
-                            .attr("disabled", "disabled");
-                    }
+        // var pwd = $("#password").val();
+        // var newpwd = $.md5(pwd);
+        // $("#password").val(pwd);
+        // $("#repassword").val(pwd);
+        $.ajax({
+            url: "/login/register",
+            type: "POST",
+            data: {
+                "username": $("#username").val(),
+                "password": $("#password").val(),
+                "repassword": $("#repassword").val()
+            },
+            success: function (result) {
+                if (result.code === 100) {
+                    // console.log(result)
+                    var url = result.extend.url;
+                    //alert(url);
+                    location.href = url;
+                } else {
+                    show_validate_msg("#password", "error",
+                        result.msg);
+                    // $("#login_btn").attr("disabled", "disabled");
                 }
-            })
+            }
+        })
     }
+
     //显示校验结果的提示信息
     function show_validate_msg(ele, status, msg) {
         //清除当前元素的校验状态
@@ -237,4 +253,6 @@
 </script>
 
 
-<div id="qds" style="display:none;"></div></body></html>
+<div id="qds" style="display:none;"></div>
+</body>
+</html>

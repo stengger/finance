@@ -30,8 +30,8 @@ public class UserController {
     }
 
     @PostMapping("register")
-    public JsonUtils register(String username, String password) {
-        JsonUtils jsonUtils = userService.register(username, password);
+    public JsonUtils register(String username, String password,String repassword) {
+        JsonUtils jsonUtils = userService.register(username, password,repassword);
         return jsonUtils;
     }
 }
