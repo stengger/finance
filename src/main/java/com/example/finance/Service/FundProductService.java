@@ -3,6 +3,7 @@ package com.example.finance.Service;
 import com.example.finance.bean.FundProduct;
 import com.example.finance.mapper.FundProductMapper;
 import com.example.finance.utils.JsonUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -11,7 +12,9 @@ import java.util.List;
 
 @Service
 public class FundProductService {
-    @Resource
+
+
+    @Autowired
     FundProductMapper fundProductMapper;
 
     public List<FundProduct> fundProductList() {
@@ -19,18 +22,26 @@ public class FundProductService {
         return fundProductList;
     }
 
+
+
     @Transactional
     public JsonUtils addFundProduct(FundProduct fundProduct) {
-        if (fundProductMapper.insert(fundProduct) > 0) {
+        int insert = fundProductMapper.insert(fundProduct);
+        if (insert > 0) {
             return JsonUtils.success();
         }else{
             return JsonUtils.fail();
         }
     }
+    /**
+     * 增加功能
+     * @return
+     */
 
     @Transactional
     public JsonUtils deleteFundProductById(Integer id) {
-        if (fundProductMapper.deleteById(id) > 0) {
+        int myid = fundProductMapper.deleteById(id);
+        if (myid > 0) {
             return JsonUtils.success();
         }else{
             return JsonUtils.fail();
