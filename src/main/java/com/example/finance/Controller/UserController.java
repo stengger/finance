@@ -21,6 +21,8 @@ public class UserController {
         return userService.login(username, password);
     }
 
+
+    //获取用户名
     @RequestMapping("loginVerifyUsername/{username}")
     public JsonUtils loginVerifyUsername(@PathVariable String username) {
         JsonUtils jsonUtils = userService.verifyUsername(username);
