@@ -42,6 +42,13 @@ public class JsonUtils {
         return result;
     }
 
+    public static JsonUtils fail(String msg) {
+        JsonUtils result = new JsonUtils();
+        result.setCode(200);
+        result.setMsg(msg);
+        return result;
+    }
+
     public static JsonUtils failPs() {
         JsonUtils result = new JsonUtils();
         result.setCode(300);

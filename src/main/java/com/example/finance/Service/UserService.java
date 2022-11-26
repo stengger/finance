@@ -6,6 +6,7 @@ import com.example.finance.mapper.UserMapper;
 import com.example.finance.utils.JsonUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 
@@ -26,7 +27,7 @@ public class UserService {
         wrapper.eq("username", username);
         wrapper.eq("password", password);
         User user = userMapper.selectOne(wrapper);
-        if (user == null) {
+         if (user == null) {
             return JsonUtils.fail();
         }
         JsonUtils success = JsonUtils.success();
@@ -63,9 +64,23 @@ public class UserService {
      * @param password
      * @return
      */
-    public JsonUtils register(String username, String password) {
+    @Transactional
+    public JsonUtils register(String username, String password,String repassword) {
+        QueryWrapper<User> wrapper = new QueryWrapper<>();
 
-//        userMapper.insert();
-        return JsonUtils.success();
+        wrapper.eq("username", username);
+        if (userMapper.selectOne(wrapper) != null) {
+            return JsonUtils.fail("用户名已存在!");
+        }
+
+        User user = new User();
+        user.setUsername(username);
+        user.setPassword(password);
+        if (userMapper.insert(user) <1) {
+            return JsonUtils.fail();
+        }
+        JsonUtils success = JsonUtils.success();
+        success.add("url","/login.html");
+        return success;
     }
 }
