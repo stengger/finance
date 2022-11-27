@@ -46,9 +46,9 @@ public class PageController {
         return "admin/userinfo/reputation";
     }
 
-    @RequestMapping("admin/finance/toChangeMoney.html")
-    public String toChangeMoney() {
-        return "admin/finance/changemoney";
+    @RequestMapping("logout.html")
+    public String logout() {
+        return "login";
     }
 
     @RequestMapping("admin/finance/toTermFinancial.html")
