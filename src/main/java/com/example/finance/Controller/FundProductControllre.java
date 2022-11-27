@@ -23,9 +23,10 @@ public class FundProductControllre {
         return "/admin/finance/fundproduct";
     }
 
-    @PostMapping("addFundProduct")
+    @PostMapping("/addFundProduct")
     @ResponseBody
     public JsonUtils addFundProduct(FundProduct fundProduct) {
+
         return fundProductService.addFundProduct(fundProduct);
     }
 

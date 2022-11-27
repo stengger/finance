@@ -5,7 +5,6 @@ import com.example.finance.bean.User;
 import com.example.finance.mapper.UserMapper;
 import com.example.finance.utils.JsonUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -24,10 +23,15 @@ public class UserService {
      * @return
      */
     public JsonUtils login(String username, String password) {
+
+
+
         QueryWrapper<User> wrapper = new QueryWrapper<>();
         wrapper.eq("username", username);
         wrapper.eq("password", password);
+
         User user = userMapper.selectOne(wrapper);
+
          if (user == null) {
             return JsonUtils.fail();
         }
@@ -36,11 +40,15 @@ public class UserService {
         if (user.getRealname()!=null&&user.getRealname().equals("admin")) {
             //管理员
             success.add("url", "/admin/main.html");
+            success.setCode(100);
+            return success;
         }else{
             //普通用户
             success.add("url", "/user/main.html");
+            success.setCode(100);
+            return success;
         }
-        return success;
+
     }
 
     /**
