@@ -6,13 +6,13 @@
           content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
     <title>后台管理系统</title>
     <!-- 引入bootstrap样式 -->
-    <link href="../../static/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css">
     <!--图标库-->
-    <link href="../../static/lyear/css/materialdesignicons.min.css" rel="stylesheet" type="text/css"/>
+    <link href="/lyear/css/materialdesignicons.min.css" rel="stylesheet" type="text/css"/>
     <!--弹出框样式-->
-    <link href="../../static/lyear/jconfirm/jquery-confirm.min.css" rel="stylesheet" type="text/css"/>
+    <link href="/lyear/jconfirm/jquery-confirm.min.css" rel="stylesheet" type="text/css"/>
     <!--自定义样式-->
-    <link href="../../static/lyear/css/style.min.css" " rel="stylesheet" type="text/css"/>
+    <link href="/lyear/css/style.min.css" rel="stylesheet" type="text/css"/>
 
 </head>
 <body rlt="1" style="">
@@ -21,39 +21,39 @@
         <!--左侧导航-->
         <aside class="lyear-layout-sidebar" id="leftbaraside">
     <div id="logo" class="sidebar-header">
-        <a class="navbar-brand" style="font-size: 20px" href="http://localhost/admin/index.html">后台管理系统</a>
+        <a class="navbar-brand" style="font-size: 20px" href="/admin/index.html">后台管理系统</a>
     </div>
     <div class="lyear-layout-sidebar-scroll ps">
         <nav class="sidebar-main">
             <ul class="nav nav-drawer">
-                <li class="nav-item"><a href="http://localhost/admin/index.html"><i class="mdi mdi-home"></i>系统首页</a></li>
+                <li class="nav-item"><a href="/admin/index.html"><i class="mdi mdi-home"></i>系统首页</a></li>
                 <li class="nav-item nav-item-has-subnav">
                     <a href="javascript:void(0)"><i class="mdi mdi-account-settings-variant"></i>
                         用户信息管理</a>
                     <ul class="nav nav-subnav">
-                        <li><a href="http://localhost/admin/userinfo/toUserInfo.html">用户信息</a></li>
-                        <li><a href="http://localhost/admin/userinfo/toBankCard.html">银行卡</a></li>
-                        <li><a href="http://localhost/admin/userinfo/toReputation.html">个人征信</a></li>
+                        <li><a href="/admin/userinfo/toUserInfo.html">用户信息</a></li>
+                        <li><a href="/admin/userinfo/toBankCard.html">银行卡</a></li>
+                        <li><a href="/admin/userinfo/toReputation.html">个人征信</a></li>
                     </ul>
                 </li>
                 <li class="nav-item nav-item-has-subnav active open"><a href="javascript:void(0)"><i class="mdi mdi-skype-business"></i>理财产品管理</a>
                     <ul class="nav nav-subnav">
-                        <li><a href="http://localhost/admin/finance/toChangeMoney.html">零钱理财</a></li>
-                        <li><a href="http://localhost/admin/finance/toTermFinancial.html">期限理财</a></li>
-                        <li><a href="http://localhost/admin/finance/toFundProduct.html">基金理财</a></li>
-                        <li><a href="http://localhost/admin/finance/toBank.html">精选银行</a></li>
+                        <li><a href="/admin/finance/toChangeMoney.html">零钱理财</a></li>
+                        <li><a href="/admin/finance/toTermFinancial.html">期限理财</a></li>
+                        <li><a href="/admin/finance/toFundProduct.html">基金理财</a></li>
+                        <li><a href="/admin/finance/toBank.html">精选银行</a></li>
                     </ul>
                 </li>
                 <li class="nav-item nav-item-has-subnav"><a href="javascript:void(0)"><i class="mdi mdi-key-change"></i>权限管理</a>
                     <ul class="nav nav-subnav">
-                        <li><a href="http://localhost/admin/permission/toUserPermissions.html">用户权限</a></li>
-                        <li><a href="http://localhost/admin/permission/toAdminPermissions.html">管理员权限</a></li>
+                        <li><a href="/admin/permission/toUserPermissions.html">用户权限</a></li>
+                        <li><a href="/admin/permission/toAdminPermissions.html">管理员权限</a></li>
                     </ul>
                 </li>
                 <li class="nav-item nav-item-has-subnav"><a href="javascript:void(0)"><i class="mdi mdi-comment-text"></i>网贷管理</a>
                     <ul class="nav nav-subnav">
-                        <li><a href="http://localhost/admin/loan/toLoanexam.html">网贷审核</a></li>
-                        <li><a href="http://localhost/admin/loan/toLoaninfo.html">网贷信息</a></li>
+                        <li><a href="/admin/loan/toLoanexam.html">网贷审核</a></li>
+                        <li><a href="/admin/loan/toLoaninfo.html">网贷信息</a></li>
                     </ul>
                 </li>
             </ul>
@@ -76,12 +76,12 @@
             <ul class="topbar-right">
                 <!--个人信息-->
                 <li class="dropdown dropdown-profile" style="margin-right: 20px">
-                    <a href="javascript:void(0)" data-toggle="dropdown"> <img id="img" class="img-avatar img-avatar-48 m-r-10" src="../../static/images/pic2.jpg" alt="admin">
+                    <a href="javascript:void(0)" data-toggle="dropdown"> <img id="img" class="img-avatar img-avatar-48 m-r-10" src="/images/pic2.jpg" alt="admin">
                         <span>admin</span>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-right">
 
-                        <li><a href="http://localhost/logout?logout=adminLogout"><i class="mdi mdi-logout-variant"></i> 退出登录</a></li>
+                        <li><a href="/logout?logout=adminLogout"><i class="mdi mdi-logout-variant"></i> 退出登录</a></li>
                     </ul>
 
                     <!--切换主题配色-->
@@ -235,34 +235,34 @@
                                             </button>
                                             <ul class="dropdown-menu">
                                                 <li>
-                                                    <a href="http://localhost/admin/finance/toBank.html?pageNum=1&amp;pageSize=1">1</a>
+                                                    <a href="/admin/finance/toBank.html?pageNum=1&amp;pageSize=1">1</a>
                                                 </li>
                                                 <li>
-                                                    <a href="http://localhost/admin/finance/toBank.html?pageNum=1&amp;pageSize=2">2</a>
+                                                    <a href="/admin/finance/toBank.html?pageNum=1&amp;pageSize=2">2</a>
                                                 </li>
                                                 <li>
-                                                    <a href="http://localhost/admin/finance/toBank.html?pageNum=1&amp;pageSize=3">3</a>
+                                                    <a href="/admin/finance/toBank.html?pageNum=1&amp;pageSize=3">3</a>
                                                 </li>
                                                 <li>
-                                                    <a href="http://localhost/admin/finance/toBank.html?pageNum=1&amp;pageSize=4">4</a>
+                                                    <a href="/admin/finance/toBank.html?pageNum=1&amp;pageSize=4">4</a>
                                                 </li>
                                                 <li>
-                                                    <a href="http://localhost/admin/finance/toBank.html?pageNum=1&amp;pageSize=5">5</a>
+                                                    <a href="/admin/finance/toBank.html?pageNum=1&amp;pageSize=5">5</a>
                                                 </li>
                                                 <li>
-                                                    <a href="http://localhost/admin/finance/toBank.html?pageNum=1&amp;pageSize=6">6</a>
+                                                    <a href="/admin/finance/toBank.html?pageNum=1&amp;pageSize=6">6</a>
                                                 </li>
                                                 <li>
-                                                    <a href="http://localhost/admin/finance/toBank.html?pageNum=1&amp;pageSize=7">7</a>
+                                                    <a href="/admin/finance/toBank.html?pageNum=1&amp;pageSize=7">7</a>
                                                 </li>
                                                 <li>
-                                                    <a href="http://localhost/admin/finance/toBank.html?pageNum=1&amp;pageSize=8">8</a>
+                                                    <a href="/admin/finance/toBank.html?pageNum=1&amp;pageSize=8">8</a>
                                                 </li>
                                                 <li>
-                                                    <a href="http://localhost/admin/finance/toBank.html?pageNum=1&amp;pageSize=9">9</a>
+                                                    <a href="/admin/finance/toBank.html?pageNum=1&amp;pageSize=9">9</a>
                                                 </li>
                                                 <li>
-                                                    <a href="http://localhost/admin/finance/toBank.html?pageNum=1&amp;pageSize=10">10</a>
+                                                    <a href="/admin/finance/toBank.html?pageNum=1&amp;pageSize=10">10</a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -283,19 +283,19 @@
                                     <nav aria-label="Page navigation">
                                         <ul class="pagination pagination-lg pull-right" style="margin-top: 0">
                                             <li>
-                                                <a href="http://localhost/admin/finance/toBank.html?pageNum=1&amp;pageSize=5">首页</a>
+                                                <a href="/admin/finance/toBank.html?pageNum=1&amp;pageSize=5">首页</a>
                                             </li>
 
                                             
 
                                             <li class="active">
-                                                <a href="http://localhost/admin/finance/toBank.html#">1</a>
+                                                <a href="/admin/finance/toBank.html#">1</a>
                                                 
                                             </li>
 
                                             
 
-                                            <li><a href="http://localhost/admin/finance/toBank.html?pageNum=1&amp;pageSize=5">末页</a>
+                                            <li><a href="/admin/finance/toBank.html?pageNum=1&amp;pageSize=5">末页</a>
                                             </li>
                                         </ul>
                                     </nav>
@@ -438,16 +438,16 @@
 </div>
 
 <!-- 引入jQuery和bootstrap的js -->
-<script src="../../static/js/jquery.js"></script>
-<script src="../../static/bootstrap/js/bootstrap.js"></script>
+<script src="/js/jquery.js"></script>
+<script src="/bootstrap/js/bootstrap.js"></script>
 <!--滚动条插件-->
-<script src="../../static/lyear/js/perfect-scrollbar.min.js"></script>
+<script src="/lyear/js/perfect-scrollbar.min.js"></script>
 <!--弹出框js-->
-<script src="../../static/lyear/jconfirm/jquery-confirm.min.js"></script>
+<script src="/lyear/jconfirm/jquery-confirm.min.js"></script>
 <!--富文本编辑框js-->
-<script src="../../static/js/wangEditor.js"></script>
+<script src="/js/wangEditor.js"></script>
 <!--自定义js脚本-->
-<script src="../../static/lyear/js/main.min.js"></script>
+<script src="/lyear/js/main.min.js"></script>
 
 
 
